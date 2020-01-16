@@ -1,8 +1,8 @@
 #include <iostream>
 
 using namespace std;
-int map[7][7];
-int visit[7];
+int map[1001][1001];
+int visit[1001];
 int n,m,cnt;
 
 void dfs(int node){
