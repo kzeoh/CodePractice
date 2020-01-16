@@ -41,7 +41,7 @@ int main(){
 		cout << '\n';
 
 	}*/
-	cout<< '\n';
+//	cout<< '\n';
 
 	dfs(1);
 	cout << cnt <<'\n';
