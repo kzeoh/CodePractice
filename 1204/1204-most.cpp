@@ -23,9 +23,13 @@ int main(int argc, char** argv)
         for(int i=0; i < 1000; i++){
             cin>>temp;
 			a[temp]++;
-			if((a[temp]>=max)&&(temp>maxVal)){
-				max=a[temp];
-				maxVal=temp;
+			if((a[temp]>=max)){
+				if(a[temp]==max&&temp>maxVal)
+					maxVal=temp;
+				else{
+					max=a[temp];
+					maxVal=temp;
+				}
 			}
         }
  
