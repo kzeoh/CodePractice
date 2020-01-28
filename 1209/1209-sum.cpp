@@ -19,8 +19,7 @@ int main(int argc, char** argv)
 
 		std:fill_n(b,202,0);
 
-        for(int i=0; i < 100; i++){
-			for(int j=0; j < 100; j++){
+        for(int i=0; i < 10000; i++){
 //				cin >> a[i][j];
 				cin >> temp;
 				b[i]+=temp;
@@ -29,7 +28,6 @@ int main(int argc, char** argv)
 					b[200]+=temp;
 				if(i+j==100)
 					b[201]+=temp;
-			}
         }
         int ret = 0;
 		int max =0;
