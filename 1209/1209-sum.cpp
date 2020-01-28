@@ -13,17 +13,22 @@ int main(int argc, char** argv)
 	for(test_case = 1; test_case <= 10; ++test_case)
     {
         int n;
+		int temp;
         cin>>n;
 //      cout<<n;
+
+		std:fill_n(b,202,0);
+
         for(int i=0; i < 100; i++){
 			for(int j=0; j < 100; j++){
-				cin >> a[i][j];
-				b[i]+=a[i][j];
-				b[j+100]+=a[i][j];
+//				cin >> a[i][j];
+				cin >> temp;
+				b[i]+=temp;
+				b[j+100]+=temp;
 				if(i==j)
-					b[200]+=a[i][j];
+					b[200]+=temp;
 				if(i+j==100)
-					b[201]+=a[i][j];
+					b[201]+=temp;
 			}
         }
         int ret = 0;
