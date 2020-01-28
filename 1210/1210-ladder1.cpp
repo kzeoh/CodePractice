@@ -7,6 +7,7 @@ int a[100][100];
 
 int go_down(int i,int j){
 	int ret;
+	cout << i << ' ' << j <<'\n';
 	if(i==99){
 		if(a[i][j]==2)
 			return 1;
