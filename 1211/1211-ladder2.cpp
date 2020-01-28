@@ -51,7 +51,7 @@ int main(int argc, char** argv)
         int n;
 		int temp;
 		int ret=0;
-		int max_cnt=0;
+		int min_cnt=10000;
         cin>>n;
 //      cout<<n;
 
@@ -73,8 +73,8 @@ int main(int argc, char** argv)
 			cnt=0;
 			if(a[0][i]==1){
 				go_down(1,i);
-				if(max_cnt<cnt){
-					max_cnt=cnt;
+				if(min_cnt>cnt){
+					min_cnt=cnt;
 					ret=i;
 				}
 					
