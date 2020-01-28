@@ -8,10 +8,10 @@ int cnt;
 
 void go_down(int i,int j){
 //	cout << i << ' ' << j <<'\n';
-/*	if(i==99){
-		return ret;
-	}*/
 	cnt++;
+	if(i==99){
+		return ;
+	}
 	if(a[i][j-1]==1&&(j-1>=0)){
 		while(a[i][j-1]!=0){
 			j--;
@@ -35,7 +35,7 @@ void go_down(int i,int j){
 		go_down(i+1,j);
 	}
 	
-	return ;
+
 	
 
 }
