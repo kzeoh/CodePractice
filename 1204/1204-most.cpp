@@ -34,7 +34,7 @@ int main(int argc, char** argv)
         }
  
         cout<<'#'<<test_case<<' '<<maxVal<<'\n';
- 
+ 		std::fill_n(a,1001,0);
     }
     return 0;//정상종료시 반드시 0을 리턴해야합니다.
 }
