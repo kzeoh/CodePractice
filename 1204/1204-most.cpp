@@ -11,7 +11,8 @@ int main(int argc, char** argv)
     /*
        여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
     */
-    for(test_case = 1; test_case <= 10; ++test_case)
+	cin >> T;
+    for(test_case = 1; test_case <= T; ++test_case)
     {
         int n;
 		int temp = 0;
