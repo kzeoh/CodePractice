@@ -7,7 +7,7 @@ int a[100][100];
 
 int go_down(int i,int j){
 	int ret;
-	cout << i << ' ' << j <<'\n';
+//	cout << i << ' ' << j <<'\n';
 	if(i==99){
 		if(a[i][j]==2)
 			return 1;
@@ -19,6 +19,7 @@ int go_down(int i,int j){
 			j--;
 			if(j==0)
 				break;
+			//cout << j;
 		}
 		ret=go_down(i+1,j);
 
@@ -70,7 +71,7 @@ int main(int argc, char** argv)
 		for(int i=0;i<100;i++){
 			if(a[0][i]==1)
 				temp=go_down(1,i);
-			if(temp=1){
+			if(temp==1){
 				ret=i;
 				break;
 			}
