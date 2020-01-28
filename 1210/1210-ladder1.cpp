@@ -6,25 +6,34 @@ using namespace std;
 int a[100][100]; 
 
 int go_down(int i,int j){
+	int ret;
 	if(i==99){
 		if(a[i][j]==2)
 			return 1;
 		else
 			return 0;
 	}
-	if(a[i][j-1]==1){
+	if(a[i][j-1]==1&&(j-1>=0)){
 		while(a[i][j-1]!=0){
 			j--;
+			if(j==0)
+				break;
 		}
-		go_down(i+1,j);
+		ret=go_down(i+1,j);
 
 	}
-	else if(a[i][j+1]==1){
+	else if(a[i][j+1]==1&&(j+1<=99)){
 		while(a[i][j+1]!=0){
 			j++;
+			if(j==99)
+				break;
 		}
-		go_down(i+1,j);
+		ret=go_down(i+1,j);
+	}else{
+		ret=go_down(i+1,j);
 	}
+	
+	return ret;
 	
 
 }
