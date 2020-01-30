@@ -12,7 +12,7 @@ int main(int argc, char** argv)
     int test_case;
     int T;
     
-	for(test_case = 1; test_case <= 1; ++test_case)
+	for(test_case = 1; test_case <= 10; ++test_case)
     {
         int n;
 		int flag=0;
