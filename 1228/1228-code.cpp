@@ -32,7 +32,7 @@ int main(){
 			cout<<" "<<a[i];
 		}
 		cout<<"\n";
-		std:fill_n(a,31,0);
+		std:fill_n(a,100,0);
 
 	}
 
