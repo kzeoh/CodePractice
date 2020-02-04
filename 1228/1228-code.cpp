@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -7,11 +8,14 @@ int main(){
 	char c;
 	int n = 0 , m = 0;
 	int r, l;
-	int a[100]={0,};	
+	int temp;
+	int num;
+	vector<int> v;	
 	for(int t=1; t<=10;t++){
 		cin >> n;
 		for(int i=0;i<n;i++){
-			cin >> a[i];
+			cin >> temp;
+			v.push_back(temp);
 		}
 
 		cin >> m;
@@ -22,17 +26,19 @@ int main(){
 			
 			for(int j=0;j<l;j++){
 			//	cout<<r<<" ";
-				cin >> a[r];
+				cin >> num;
+				v.insert(v.begin()+r,num);
 				r++;
 			}
 		
 		}
 		cout<<"#"<<t;
 		for(int i=0;i<10;i++){
-			cout<<" "<<a[i];
+			cout<<" "<<v.at(i);
 		}
 		cout<<"\n";
-		std:fill_n(a,100,0);
+		v.clear();
+//		std:fill_n(v,v.size(),0);
 
 	}
 
