@@ -9,103 +9,48 @@ int main(){
 
 	int n;
 	int Rcnt =0, Bcnt=0;
-	int minCnt=2e9, minCnt2=2e9;
-	int flag=0;
-	vector <char> red, blue;
-	char c,temp;
+	int idx=0;
+	int cnt=0;
+	int minCnt=2e9;
 	string s;
 
 	cin >> n >> s;
-//	cout << n << s << "\n";
-	c=s.at(0);
-	if(c!=s.at(1)&&c=='R'){
-		flag=1;
-	}else if(c==s.at(1)&&c=='B'){
-		flag=1;
-	}else if(c=='B'&&s.at(1)=='R'){
-		flag=1;
-		Rcnt++;
-	}
 
-	for(int i=2;i<n;i++){
-		temp=s.at(i);
-		if(temp=='R'&&flag){
+	for(int i=0; i<n;i++){
+		if(s.at(i)=='R')
 			Rcnt++;
-		}else if(temp=='B'&&!flag){
-			flag=1;
-		}
-	}
-	flag=0;
-	if(c!=s.at(1)&&c=='B'){
-		flag=1;
-	}else if(c==s.at(1)&&c=='R'){
-		flag=1;
-	}else if(c=='R'&&s.at(1)=='B'){
-		flag=1;
-		Bcnt++;
-	}
-
-
-	for(int i=2;i<n;i++){
-		temp=s.at(i);
-		if(temp=='B'&&flag){
+		else
 			Bcnt++;
-		}else if(temp=='R'&&!flag){
-			flag=1;
-		}
-	}
-	
-//	cout << Rcnt << Bcnt << "\n";	
-	minCnt=min(Rcnt,Bcnt);	
-	Rcnt =0;
-	Bcnt =0;
-	flag=0;
-	c=s.at(n-1);
-//	cout<<c<<"\n";
-	if(c!=s.at(n-2)&&c=='R'){
-		flag=1;
-	}else if(c==s.at(n-2)&&c=='B'){
-		flag=1;
-	}else if(c=='B'&&s.at(n-2)=='R'){
-		flag=1;
-		Rcnt++;
-	}
-//	cout<< Rcnt <<" "<<flag<< "\n";
-	for(int i=n-3;i>=0;i--){
-		temp=s.at(i);
-		if(temp=='R'&&flag){
-			Rcnt++;
-		}else if(temp=='B'&&!flag){
-			flag=1;
-		}
-	}
-//	cout<< Rcnt <<"\n";
-	flag=0;
-	if(c!=s.at(n-1)&&c=='B'){
-		flag=1;
-	}else if(c==s.at(n-2)&&c=='R'){
-		flag=1;
-	}else if(c=='R'&&s.at(1)=='B'){
-		flag=1;
-		Bcnt++;
 	}
 
-
-	for(int i=n-3;i>=0;i--){
-		temp=s.at(i);
-		if(temp=='B'&&flag){
-			Bcnt++;
-		}else if(temp=='R'&&!flag){
-			flag=1;
-		}
+	while(s.at(idx)=='R'){
+		cnt++;
+		idx++;
 	}
 	
-//	cout << Rcnt << Bcnt << "\n";	
-	minCnt2=min(Rcnt,Bcnt);	
-
-	minCnt=min(minCnt,minCnt2);
+	minCnt=Rcnt-cnt;
+	idx=n-1;
+	cnt=0;
+	while(s.at(idx)=='R'){
+		cnt++;
+		idx--;
+	}
+	minCnt=min(minCnt,Rcnt-cnt);
+	cnt=0;
+	idx=0;
+	while(s.at(idx)=='B'){
+		cnt++;
+		idx++;
+	}
 	
-	
+	minCnt=min(minCnt,Bcnt-cnt);
+	idx=n-1;
+	cnt=0;
+	while(s.at(idx)=='B'){
+		cnt++;
+		idx--;
+	}
+	minCnt=min(minCnt,Bcnt-cnt);
 
 	cout << minCnt<<"\n";
 		
