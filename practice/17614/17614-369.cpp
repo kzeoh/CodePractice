@@ -26,7 +26,7 @@ int main(){
 		}
 		
 	}
-	cout << cnt;
+	cout << cnt<<"\n";
 
 	return 0;
 }
