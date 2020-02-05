@@ -26,6 +26,8 @@ int main(){
 	while(s.at(idx)=='R'){
 		cnt++;
 		idx++;
+		if(idx==n)
+			break;
 	}
 	
 	minCnt=Rcnt-cnt;
@@ -34,6 +36,8 @@ int main(){
 	while(s.at(idx)=='R'){
 		cnt++;
 		idx--;
+		if(idx==-1)
+			break;
 	}
 	minCnt=min(minCnt,Rcnt-cnt);
 	cnt=0;
@@ -41,6 +45,8 @@ int main(){
 	while(s.at(idx)=='B'){
 		cnt++;
 		idx++;
+		if(idx==n)
+			break;
 	}
 	
 	minCnt=min(minCnt,Bcnt-cnt);
@@ -49,6 +55,8 @@ int main(){
 	while(s.at(idx)=='B'){
 		cnt++;
 		idx--;
+		if(idx==-1)
+			break;
 	}
 	minCnt=min(minCnt,Bcnt-cnt);
 
