@@ -2,7 +2,6 @@
 #include <algorithm>
 #include <queue>
 #include <cmath>
-#include <functional>
 
 using namespace std;
 
@@ -40,16 +39,16 @@ int main(){
 			
 			if(visited[current])
 				continue;
-			if(i==3)
-				cout<<dist<<" "<<current<<"\n";
+/*			if(i==3)
+				cout<<dist<<" "<<current<<"\n";*/
 			sum+=dist;
 			visited[current]=1;
 			for(int j=0;j<N;j++){
 				if(visited[j])
 					continue;
-				q.push({pow(x[current]-x[j],2)+pow(y[current]-y[j],2)*e,j});
-				if(i==3)
-				cout<<"now "<<q.top().first<<" "<<q.top().second<<"\n";
+				q.push({(pow(x[current]-x[j],2)+pow(y[current]-y[j],2))*e,j});
+/*				if(i==3)
+				cout<<"now "<<q.top().first<<" "<<q.top().second<<"\n";*/
 
 			}
 		}	
