@@ -24,7 +24,7 @@ int main() {
 		}
 		
 		sort(v.begin(), v.end());
-		cout << "#" << tc << " " << v[N-1]<< "\n";
+		cout << "#" << i << " " << v[N-1]<< "\n";
 
 		v.clear();	
 	}
