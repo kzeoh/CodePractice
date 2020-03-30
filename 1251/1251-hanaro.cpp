@@ -2,13 +2,14 @@
 #include <algorithm>
 #include <queue>
 #include <cmath>
+#include <functional>
 
 using namespace std;
 
 int main(){
 
 	int tc;
-	priority_queue<pair<double, int>,vector<pair<double, int>>,greater<> > q;
+	priority_queue<pair<double, int>,vector<pair<double, int>>,greater<pair<doube,int>> > q;
 	int	visited[1001];
 
 	cin >> tc;
