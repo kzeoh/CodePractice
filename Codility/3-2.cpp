@@ -7,6 +7,13 @@ int solution(vector<int> &A) {
     // write your code in C++14 (g++ 6.2.0)
     int answer=0;
     int count=0;
+    if(A.size()==1){
+        answer=++A[0];
+        return answer;
+    }else if(A.size()==0){
+        answer=1;
+        return answer;
+    }
     sort(A.begin(),A.end());
     count=A[0];
     //cout << count;
@@ -17,8 +24,9 @@ int solution(vector<int> &A) {
             break;
         }
     }
+    
+
     //cout<<answer;
     
     return answer;
 }
-
