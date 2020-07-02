@@ -14,12 +14,13 @@ int solution(vector<int> &A) {
         Y+=A[i];
     }
     //cout<<"Y"<<Y<<"\n";
-    for(int i=0;i<A.size();i++){
+    for(int i=0;i<A.size()-1;i++){
         X+=A[i];Y-=A[i];
         result=X-Y;
         //cout<<X<<Y<<result<<"\n";
         if(result<0)
             result*=-1;
+        //cout << result<<"\n";
         if(result<answer)
             answer=result;
         
