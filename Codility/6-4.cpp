@@ -12,7 +12,9 @@ int solution(vector<int> &A) {
     sort(A.begin(),A.end());
     
     for(int i=0;i<A.size()-2;i++){
-        if(A[i]+A[i+1]>A[i+2]){
+        long a = (long)A[i]+A[i+1];
+        long b = (long)A[i+2];
+        if(a>b){
             return 1;
         }
     }
