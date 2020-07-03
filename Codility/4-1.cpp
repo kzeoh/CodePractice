@@ -10,24 +10,28 @@ int solution(int X, vector<int> &A) {
     int count = 0;
     int answer = -1, idx=0, tar=X;
     map <int,int> m;
-    
+    m[A[0]]=1;
     for(int i=0;i<A.size();i++){
-        m[A[i]]=i;
+        if(i>0)
+            m[A[i]]=i;
         if(tar==A[i]){
-            count =0;
-            for(int j=1;j<X;j++){
+            count =tar;
+            for(int j=tar;j>=1;j--){
                 if(m[j]){
-                    count++;
-                }else{
+                    count--;
+                }else if(A.size()==1){
+                    return 0;
+                }
+                else{
                     break;
                 }
                 //cout << j << " "<< m[j]<<"\n";
             }
-            if(count==X-1){
+            if(count==0){
                 answer=i;
                 break;
             }else{
-                tar-=1;
+                tar=count;
             }
         }
     }
@@ -35,4 +39,3 @@ int solution(int X, vector<int> &A) {
     return answer;
     
 }
-
