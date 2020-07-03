@@ -8,12 +8,12 @@
 int solution(int X, vector<int> &A) {
     // write your code in C++14 (g++ 6.2.0)
     int count = 0;
-    int answer = 0;
+    int answer = -1, idx=0, tar=X;
     map <int,int> m;
     
     for(int i=0;i<A.size();i++){
         m[A[i]]=i;
-        if(X==A[i]){
+        if(tar==A[i]){
             count =0;
             for(int j=1;j<X;j++){
                 if(m[j]){
@@ -21,12 +21,18 @@ int solution(int X, vector<int> &A) {
                 }else{
                     break;
                 }
+                //cout << j << " "<< m[j]<<"\n";
             }
-            if(count==X-1)
-                return i;
+            if(count==X-1){
+                answer=i;
+                break;
+            }else{
+                tar-=1;
+            }
         }
     }
     
     return answer;
     
 }
+
