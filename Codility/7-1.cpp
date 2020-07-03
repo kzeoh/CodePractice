@@ -31,8 +31,10 @@ int solution(string &S) {
             }
         }
     }
-    
-    return 1;
+    if(s.empty())
+        return 1;
+    else
+        return 0;
     
 }
 
