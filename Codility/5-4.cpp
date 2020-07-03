@@ -11,11 +11,13 @@ int solution(vector<int> &A) {
     for(int i = A.size()-1;i>=0;i--){
         if(A[i]){
             count++;
-        }else
+        }else{
             answer+=count;
+            if(answer>1000000000)
+                return -1;        
+        }
+            
     }
-    if(answer>1000000000)
-        return -1;
+    
     return answer;
 }
-
