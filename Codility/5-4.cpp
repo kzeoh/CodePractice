@@ -14,7 +14,8 @@ int solution(vector<int> &A) {
         }else
             answer+=count;
     }
-    
+    if(answer>1000000000)
+        return -1;
     return answer;
 }
 
