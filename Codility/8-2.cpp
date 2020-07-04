@@ -23,8 +23,10 @@ int solution(vector<int> &A) {
         }else if(m[A[i]]==domCnt){
             domVal=1e9+1;
         }
+        if(domCnt<=(A.size()-i)/2)
+            domVal=1e9+1;
         domList[i]=domVal;
-        //cout<<domVal<<"\n";
+        //cout<<domCnt<<" "<<domVal<<"\n";
     }
     m.clear();
     domCnt=0;
@@ -40,6 +42,10 @@ int solution(vector<int> &A) {
         }else if(m[A[i]]==domCnt){
             domVal=1e9+1;
         }
+        
+        if(domCnt<=(i+1)/2)
+            domVal=1e9+1;
+        
         if(domVal!=1e9+1&&domVal==domList[i+1]){
             answer++;
         }
