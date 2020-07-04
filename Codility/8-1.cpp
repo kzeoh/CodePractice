@@ -25,9 +25,11 @@ int solution(vector<int> &A) {
             dom=0;
         }
     }
-    if(dom){
+    //cout<<domMax<<A.size()<<"\n";
+    if(dom&&(domMax>(A.size()/2))){
         return domIdx;
     }
     
     return -1;
 }
+
