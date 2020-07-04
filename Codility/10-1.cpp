@@ -11,7 +11,7 @@ int solution(int N) {
     if (N==1)
         return 1;
     for(int i=1;i<=N/2;i++){
-        if(upper==i)
+        if(upper<=i)
             break;
         if(N%i==0){
             upper=N/i;
