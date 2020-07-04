@@ -1,6 +1,6 @@
 // you can use includes, for example:
 // #include <algorithm>
-
+#include <cmath>
 // you can write to stdout for debugging purposes, e.g.
 // cout << "this is a debug message" << endl;
 
@@ -10,9 +10,9 @@ int solution(int N) {
     int upper=N;
     if (N==1)
         return 1;
-    for(int i=1;i<=N/2;i++){
-        if(upper<=i)
-            break;
+    for(int i=1;i<=sqrt(N);i++){
+        /*if(upper<=i)
+            break;*/
         if(N%i==0){
             upper=N/i;
             if(upper==i)
