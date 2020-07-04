@@ -16,11 +16,15 @@ int solution(vector<int> &A) {
         m[A[i]]++;
         if(m[A[i]]>domCnt){
             domCnt=m[A[i]];
-            domVal=A[i];
+            if(domCnt>(A.size()-i)/2){
+                domVal=A[i];
+            }else
+                domVal=1e9+1;
         }else if(m[A[i]]==domCnt){
             domVal=1e9+1;
         }
         domList[i]=domVal;
+        //cout<<domVal<<"\n";
     }
     m.clear();
     domCnt=0;
@@ -29,8 +33,11 @@ int solution(vector<int> &A) {
         m[A[i]]++;
         if(m[A[i]]>domCnt){
             domCnt=m[A[i]];
-            domVal=A[i];
-        }else if(m[A[i]]=domCnt){
+            if(domCnt>(i+1)/2){
+                domVal=A[i];
+            }else
+                domVal=1e9+1;
+        }else if(m[A[i]]==domCnt){
             domVal=1e9+1;
         }
         if(domVal!=1e9+1&&domVal==domList[i+1]){
