@@ -35,7 +35,8 @@ int solution(vector<int> &A) {
         }
         if(answer<count){
             answer=count;
-        }
+        }else if(answer>count)
+            break;
     }
     
     return answer;
