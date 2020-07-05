@@ -18,13 +18,13 @@ vector<int> solution(vector<int> &A) {
     
     for(int i=0;i<A.size();i++){
         int cnt=0;
-        for(int j=1;j<=sqrt(A[i]);j++){
-            if(A[i]%j==0){
-                if(m[j]){
-                    cnt+=m[j];
-                }
-                if(A[i]/j!=j&&m[A[i]/j]){
-                    cnt+=m[A[i]/j];
+        int current =A[i];
+        for(int j=1;j<=sqrt(current);j++){
+            if(current%j==0){
+                cnt+=m[j];
+                
+                if(current/j!=j){
+                    cnt+=m[current/j];
                 }
                 
             }
