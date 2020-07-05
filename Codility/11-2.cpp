@@ -19,7 +19,7 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
 		}
 	}
     
-    for(int i=2;i<isPrime.size();i++){
+    for(int i=2;i<=N;i++){
         if(isPrime[i]){
             primeList.push_back(i);
         }
@@ -31,11 +31,11 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
             if(sumVal>N){
                 break;
             }
-            semiPrime[sumVal]++;
+            semiPrime[sumVal]=1;
         }
     }
     
-    for(int i=2;i<=N;i++){
+    for(int i=1;i<=N;i++){
         semiPrime[i]+=semiPrime[i-1];    
     }
     
