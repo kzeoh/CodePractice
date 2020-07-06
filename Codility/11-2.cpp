@@ -12,6 +12,7 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
     vector <int> semiPrime(N+1,0);
     vector<int> answer;
     
+    
     for(int i = 2 ; (i * i) <= N ; ++i){
 		if(isPrime[i]){
 			for(int j = i * i ; j <= N ; j += i) 
@@ -24,12 +25,12 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
             primeList.push_back(i);
         }
     }
-    
-    for(int i=0;i<primeList.size()-1;i++){
+    int pLsize = primeList.size();
+    for(int i=0;i<pLsize-1;i++){
         if(primeList[i]*primeList[i]>N){
             break;
         }
-        for(int j=i;j<primeList.size();j++){
+        for(int j=i;j<pLsize;j++){
             int sumVal = primeList[i]*primeList[j];
             if(sumVal>N){
                 break;
@@ -42,7 +43,9 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
         semiPrime[i]+=semiPrime[i-1];    
     }
     
-    for(int i=0;i<P.size();i++){
+    int pSize = P.size();
+    
+    for(int i=0;i<pSize;i++){
         answer.push_back(semiPrime[Q[i]]-semiPrime[P[i]-1]);
     }
     
