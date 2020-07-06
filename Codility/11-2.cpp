@@ -26,6 +26,9 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
     }
     
     for(int i=0;i<primeList.size()-1;i++){
+        if(primeList[i]*primeList[i]>N){
+            break;
+        }
         for(int j=i;j<primeList.size();j++){
             int sumVal = primeList[i]*primeList[j];
             if(sumVal>N){
@@ -45,3 +48,4 @@ vector<int> solution(int N, vector<int> &P, vector<int> &Q) {
     
     return answer;
 }
+
