@@ -1,11 +1,7 @@
 #ignore
-*.txt
-*.out
+**/*.txt
+**/*.out
 
-*/*.txt
-*/*/*.txt
-*/*.out
-*/*/*.out
 
 
 
