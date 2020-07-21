@@ -18,11 +18,13 @@ vector<int> solution(int N, vector<int> &A) {
         }else{
             if(v[A[i]-1]<maxC){
                 v[A[i]-1]=maxC+1;
+                
             }else{
                 v[A[i]-1]++;
-                if(v[A[i]-1]>curMax){
-                    curMax=v[A[i]-1];
-                }
+                
+            }
+            if(v[A[i]-1]>curMax){
+                curMax=v[A[i]-1];
             }
         }
     }
