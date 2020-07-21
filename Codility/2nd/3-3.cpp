@@ -14,12 +14,12 @@ int solution(vector<int> &A) {
     int aggSum =0;
     int minDiff = 1e9;
     
-    for(int i=0;i<A.size();i++){
+    for(int i=0;i<A.size()-1;i++){
         aggSum+=A[i];
         if(abs(aggSum-reverseAdd[i+1])<minDiff){
             minDiff=abs(aggSum-reverseAdd[i+1]);
             
-            //cout << reverseAdd[i+1]<< <<minDiff<<  <<answer<<n;
+            //cout << reverseAdd[i+1]<< <<minDiff<<n;
         }
     }
     return minDiff;
