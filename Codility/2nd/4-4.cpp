@@ -9,8 +9,8 @@ int solution(vector<int> &A) {
     int answer=1;
     sort(A.begin(),A.end());
     
-    for(int i=0;i<A.size()-1;i++){
-        if(!(A[i]+1==A[i+1])){
+    for(int i=0;i<A.size();i++){
+        if(!(A[i]==i+1)){
             return 0;
         }
     }
