@@ -26,11 +26,11 @@ void solve(int n, int m, int step){
 		if(moveN<1||moveN>100||moveM<1||moveM>100){
 			continue;
 		}
-		if(visited[moveN][moveM]==0&&arr[moveN][moveM]==1){
-			visited[moveN][moveM]=1;
+		if((visited[moveN][moveM]>step||visited[moveN][moveM]==0)&&arr[moveN][moveM]==1){
+			visited[moveN][moveM]=step+1;
 //			cout<<moveN<<" "<<moveM<<"\n";
 			solve(moveN,moveM,step+1);
-			visited[moveN][moveM]=0;
+			visited[moveN][moveM]=step;
 
 		}				
 	}
