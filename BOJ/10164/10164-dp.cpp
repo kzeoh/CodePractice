@@ -15,7 +15,7 @@ int main(){
 	cin >> N >> M >> K;
 
 	int k=1;
-	int targetN, targetM;
+	int targetN=0, targetM=0;
 	
 	dp[0][1]=1;
 	for(int i=1;i<=N;i++){
@@ -32,7 +32,10 @@ int main(){
 	int nextN=N-targetN+1;
 	int nextM=M-targetM+1;
 
-	answer= dp[targetN][targetM]*dp[nextN][nextM];
+	if(K)
+		answer= dp[targetN][targetM]*dp[nextN][nextM];
+	else
+		answer = dp[N][M];
 
 
 	cout << answer<<"\n";
